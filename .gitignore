@@ -1,1 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
 .env
+venv/
+.env.*
+
+# VS Code / JetBrains
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+*.log
+docker-compose.override.yml
+pgdata/             # if you later mount a local volume
+
+# Pydantic cache
+__pydantic_cache__/
+
+# Ignore compiled SQLite files (if you ever use sqlite)
+*.sqlite3
+*.db
+
+# Node (if you ever add frontend in same repo)
+node_modules/
+dist/
+build/
+.next/
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
