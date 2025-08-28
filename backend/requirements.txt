@@ -1,8 +1,9 @@
 fastapi
 uvicorn[standard]
-pymongo
+pymongo[srv]==3.12
 requests
 beautifulsoup4
 httpx
 python-dotenv
 openai
+pydantic
