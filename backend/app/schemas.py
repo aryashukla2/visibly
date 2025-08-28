@@ -6,6 +6,7 @@ class User(BaseModel):
     id: Optional[str] = Field(alias="_id")   # Mongo ObjectId as str
     name: str
     email: str
+    hashed_password: str
     websites: Optional[List[str]] = []
     tier_type: str
     created_at: datetime = Field(datetime.now())
