@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Home, FileCode, Plus, Search, Settings } from "lucide-react";
+import { Home, FileChartLine, Settings } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavUser } from "@/components/nav-user";
@@ -18,7 +18,7 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
 
-// Menu items.
+// Menu items
 const items = [
   {
     title: "Dashboard",
@@ -28,7 +28,7 @@ const items = [
   {
     title: "Reports",
     url: "/reports",
-    icon: FileCode,
+    icon: FileChartLine,
   },
   {
     title: "Settings",
