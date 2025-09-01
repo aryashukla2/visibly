@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Home, FileChartLine, Settings } from "lucide-react";
+import { Home, FileChartLine, Settings, BarChart3} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavUser } from "@/components/nav-user";
@@ -16,6 +16,7 @@ import {
   SidebarGroupContent,
   SidebarMenuItem,
   SidebarMenuButton,
+  useSidebar
 } from "@/components/ui/sidebar";
 
 // Menu items
@@ -32,7 +33,7 @@ const items = [
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/settings",
     icon: Settings,
   },
 ];
@@ -52,38 +53,43 @@ export function AppSidebar({
   onCollapseChange?: (collapsed: boolean) => void;
 }) {
   const pathname = usePathname();
+  const { state } = useSidebar();
+  const isCollapsed = state === "collapsed";
 
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarContent className="mt-0">
-        <SidebarHeader className="text-black font-intra mt-2 ml-1 font-bold text-3xl">
-          <Link href="/" className="w-full">
-            Visibly
+        <SidebarHeader className="text-black font-intra mt-4 ml-1 font-bold py-6">
+          <Link href="/" className="w-full flex items-center justify-start hover:text-sky-600 transition-colors cursor-pointer">
+            {isCollapsed ? (
+              <BarChart3 className="h-9 w-9 flex-shrink-0" />
+            ) : (
+              <>
+                <BarChart3 className="h-9 w-9 flex-shrink-0 mr-3" />
+                <span className="text-3xl">Visibly</span>
+              </>
+            )}
           </Link>
-          <div className="border-b border-gray-300 mt-2"></div>
+          {!isCollapsed && <div className="border-b border-gray-300 mt-4"></div>}
         </SidebarHeader>
-        <SidebarGroup>
-          {/*}
-          <SidebarGroupLabel className="text-base">
-            Application
-          </SidebarGroupLabel>*/}
+        <SidebarGroup className="mt-0">
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="space-y-5">
               {items.map((item) => {
                 const isActive = pathname === item.url;
                 return (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton
                       asChild
-                      className={`text-base ${
+                      className={`text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
                         isActive
-                          ? "bg-black text-white hover:bg-black hover:text-white"
-                          : ""
+                          ? "font-bold text-sky-600 bg-sky-50 hover:text-sky-600 hover:bg-sky-100"
+                          : "text-gray-700 hover:bg-sky-600 hover:text-white font-medium"
                       }`}
                     >
-                      <Link href={item.url} className="w-full">
-                        <item.icon className="text-20px" />
-                        <span className="text-20px">{item.title}</span>
+                      <Link href={item.url} className="w-full flex items-center">
+                        <item.icon className="h-6 w-6 mr-3 flex-shrink-0" />
+                        <span className="text-lg">{item.title}</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
