@@ -56,7 +56,7 @@ export function AppSidebar({
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarContent className="mt-0">
-        <SidebarHeader className="text-black font-intra mt-2 ml-1 font-bold text-3xl">
+        <SidebarHeader className="text-black font-intra mt-2 ml-1 font-semibold text-3xl">
           <Link href="/" className="w-full">
             Visibly
           </Link>

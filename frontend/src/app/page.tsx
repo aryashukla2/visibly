@@ -82,7 +82,7 @@ export function ChartRadialText() {
                       <tspan
                         x={viewBox.cx}
                         y={viewBox.cy}
-                        className="fill-foreground text-2xl font-bold"
+                        className="fill-foreground text-2xl"
                       >
                         {chartData[0].visitors.toLocaleString()}
                       </tspan>
@@ -123,7 +123,7 @@ export default function Dashboard() {
           <Card className="mb-8">
             <CardContent className="p-8">
               <div className="flex flex-col items-center space-y-4">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">
+                <h2 className="text-3xl tracking-tight text-gray-800 sm:text-4xl">
                   Analyze Your Website&lsquo;s SEO
                 </h2>
                 <p className="text-center text-lg text-gray-600">
@@ -202,9 +202,9 @@ export default function Dashboard() {
                       <path d="M14 20v-5" />
                     </svg>
                     <div>
-                      <h4 className="font-semibold text-gray-800">
+                      <p className="text-gray-800 text-xl">
                         Improve H1 Tags
-                      </h4>
+                      </p>
                       <p className="text-sm text-gray-600">
                         The h1 tag on your homepage is too generic. Try making
                         it more descriptive.
@@ -226,9 +226,9 @@ export default function Dashboard() {
                       <path d="M22 4L12 14.01l-3-3" />
                     </svg>
                     <div>
-                      <h4 className="font-semibold text-gray-800">
+                      <p className="text-gray-800 text-xl">
                         Add FAQ Schema
-                      </h4>
+                      </p>
                       <p className="text-sm text-gray-600">
                         We detected FAQ content. Adding FAQ schema can improve
                         your search appearance.
@@ -251,9 +251,9 @@ export default function Dashboard() {
                       <line x1="12" y1="17" x2="12.01" y2="17" />
                     </svg>
                     <div>
-                      <h4 className="font-semibold text-gray-800">
+                      <p className="text-gray-800 text-xl">
                         Fix Broken Links
-                      </h4>
+                      </p>
                       <p className="text-sm text-gray-600">
                         The AI found 3 broken internal links. You should fix
                         these to improve user experience.
@@ -273,10 +273,10 @@ export default function Dashboard() {
                 <table className="w-full text-left">
                   <thead>
                     <tr className="border-b border-gray-200">
-                      <th className="py-2 text-sm font-semibold text-gray-500">
+                      <th className="py-2 text-sm text-gray-500">
                         Domain
                       </th>
-                      <th className="py-2 text-right text-sm font-semibold text-gray-500">
+                      <th className="py-2 text-right text-sm text-gray-500">
                         Score
                       </th>
                     </tr>
@@ -331,7 +331,9 @@ export default function Dashboard() {
                   </AccordionItem>
                   <AccordionItem value="item-2">
                     <AccordionTrigger>
-                      Analyze our homepage&lsquo;s keyword density
+                      <h1>
+                       Analyze our homepage&lsquo;s keyword density
+                      </h1>
                     </AccordionTrigger>
                     <AccordionContent>
                       <p>
