@@ -31,3 +31,10 @@ class Report(BaseModel):
     created_at: datetime = Field(datetime.now())
     updated_at: datetime = Field(datetime.now())
 
+class AiPrompt(BaseModel):
+    id: Optional[str] = Field(alias="_id")  
+    website_id: str
+    prompt_text: str
+    created_at: datetime = Field(default_factory=datetime.now)
+    updated_at: datetime = Field(default_factory=datetime.now)
+
