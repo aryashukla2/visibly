@@ -7,3 +7,4 @@ DB_URL = os.getenv("MONGO_URL")
 client = MongoClient(DB_URL)
 db = client["visiblydb"]
 users_collection = db["users"]
+prompts_collection = db["ai_prompts"]
