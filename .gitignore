@@ -25,10 +25,6 @@ pgdata/             # if you later mount a local volume
 # Pydantic cache
 __pydantic_cache__/
 
-# Ignore compiled SQLite files (if you ever use sqlite)
-*.sqlite3
-*.db
-
 # Node (if you ever add frontend in same repo)
 node_modules/
 dist/

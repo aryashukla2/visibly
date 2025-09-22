@@ -8,3 +8,4 @@ client = MongoClient(DB_URL)
 db = client["visiblydb"]
 users_collection = db["users"]
 prompts_collection = db["ai_prompts"]
+reports_collection = db["reports"]
